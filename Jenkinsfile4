@@ -1,0 +1,24 @@
+pipeline {
+    agent { node { label 'Agent1'} }
+
+    stages {
+        parallel {
+            stage('Dev') {
+                steps {
+                    echo "developing"
+                }
+            }
+
+            stage('prod') {
+                steps {
+                    echo "Production"
+                }
+            }
+            stage('Stage') {
+                steps {
+                    echo "Staging"
+                }
+            }
+        }
+    }
+}
