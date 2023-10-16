@@ -1,0 +1,15 @@
+pipeline {
+    agent { node { label 'Agent1'} }
+
+    environment {
+    IP_ADDRESS = "10.27.48.200"
+    NAME = "Tomcat"
+    }
+}
+
+stage('Build') {
+    steps {
+        echo "installing $(env.NAME), Address is $(env.IP_ADDRESS)"
+    }
+}
+
