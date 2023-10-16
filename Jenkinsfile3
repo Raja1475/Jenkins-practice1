@@ -1,6 +1,11 @@
 pipeline {
     agent { node { label 'Agent1'} }
 
+    triggers {
+        cron '* * * * *'
+        }
+
+
     environment {
     IP_ADDRESS = "10.27.48.200"
     NAME = "Tomcat"
