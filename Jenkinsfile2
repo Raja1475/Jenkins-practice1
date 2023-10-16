@@ -1,0 +1,53 @@
+pipeline {
+    agent { node { label 'Agent1'} }
+
+    parameters {
+        choice choices: ['Dev', 'Prod', 'QA', 'Stage'], description: 'Select the environment', name: 'environment'
+    }
+
+    stages {
+        stage('Deploy to Dev') {
+
+            when {
+            expression { params.environment == 'Dev'}
+            }
+            steps {
+                echo "deploying to Dev"
+            }
+        }
+
+        stage('Deploy to Prod') {
+
+            when {
+            expression { params.environment == 'Prod'}
+            }
+
+            steps {
+                echo "deploying to Prod"
+            }
+        }
+
+        stage('Deploy to QA') {
+
+            when {
+            expression { params.environment == 'QA'}
+            }
+            
+            steps {
+                echo "deploying to QA"
+            }
+        }
+
+        stage('Deploy to Stage') {
+
+            when {
+            expression { params.environment == 'Stage'}
+            }
+            steps {
+                echo "deploying to Stage"
+            }
+        }
+    }
+}
+
+
