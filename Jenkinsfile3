@@ -1,9 +1,9 @@
 pipeline {
     agent { node { label 'Agent1'} }
 
-    triggers {
-        cron '* * * * *'
-        }
+    // triggers {
+    //     cron '* * * * *'
+    //     }
 
 
     environment {
