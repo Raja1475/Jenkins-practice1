@@ -2,6 +2,8 @@ pipeline {
     agent { node { label 'Agent1'} }
 
     stages {
+        stage ('running parallel') {
+
         parallel {
             stage('Dev') {
                 steps {
@@ -19,6 +21,8 @@ pipeline {
                     echo "Staging"
                 }
             }
+
+        }
         }
     }
 }
