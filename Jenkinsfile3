@@ -5,11 +5,13 @@ pipeline {
     IP_ADDRESS = "10.27.48.200"
     NAME = "Tomcat"
     }
-}
 
-stage('Build') {
+    stage('Build') {
     steps {
         echo "installing $(env.NAME), Address is $(env.IP_ADDRESS)"
+        }
     }
 }
+
+
 
