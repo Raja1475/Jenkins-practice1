@@ -6,25 +6,43 @@ pipeline {
     }
 
     stages {
-        stage('Deploy to dev') {
+        stage('Deploy to Dev') {
+
+            when {
+            environment name: 'environment', value: 'Dev'
+            }
             steps {
                 echo "deploying to Dev"
             }
         }
 
         stage('Deploy to Prod') {
+
+            when {
+            environment name: 'environment', value: 'Prod'
+            }
+
             steps {
                 echo "deploying to Prod"
             }
         }
 
         stage('Deploy to QA') {
+
+            when {
+            environment name: 'environment', value: 'QA'
+            }
+            
             steps {
                 echo "deploying to QA"
             }
         }
 
         stage('Deploy to Stage') {
+
+            when {
+            environment name: 'environment', value: 'Stage'
+            }
             steps {
                 echo "deploying to Stage"
             }
