@@ -8,7 +8,7 @@ pipeline {
 
     stage('Build') {
     steps {
-        echo "installing $(env.NAME), Address is $(env.IP_ADDRESS)"
+        echo "installing ${env.NAME}, Address is ${env.IP_ADDRESS}"
         }
     }
 }
