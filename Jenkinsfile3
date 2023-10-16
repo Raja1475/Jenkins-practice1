@@ -6,9 +6,11 @@ pipeline {
     NAME = "Tomcat"
     }
 
-    stage('Build') {
-    steps {
-        echo "installing ${env.NAME}, Address is ${env.IP_ADDRESS}"
+    stages {
+        stage('Build') {
+            steps {
+            echo "installing ${env.NAME}, Address is ${env.IP_ADDRESS}"
+            }
         }
     }
 }
